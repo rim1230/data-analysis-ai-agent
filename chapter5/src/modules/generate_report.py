@@ -15,7 +15,7 @@ def generate_report(
     data_info: str,
     user_request: str,
     process_data_threads: list[DataThread] = [],
-    model: str = "gpt-5.2-2025-12-11-07-18",
+    model: str = "gpt-5.2-2025-12-11",
     output_dir: str = "outputs/sample",
     template_file: str = "src/prompts/generate_report.jinja",
 ) -> LLMResponse:

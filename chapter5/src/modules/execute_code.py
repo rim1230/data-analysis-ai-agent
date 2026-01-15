@@ -12,6 +12,7 @@ def execute_code(
     user_request: str | None = None,
     timeout: int = 1200,
 ) -> DataThread:
+    """コードを引数にとって、実行結果をDataThreadとして返す関数"""
     execution = sandbox.run_code(code, timeout=timeout)
     logger.debug(f"{execution=}")
     results = [

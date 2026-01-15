@@ -24,7 +24,7 @@ def main() -> None:
     response = generate_plan(
         data_info=data_info,
         user_request=user_request,
-        model="gpt-5.2-2025-12-11-07-18",
+        model="gpt-5.2-2025-12-11",
     )
     plan = response.content
     logger.info(plan.model_dump_json(indent=4))

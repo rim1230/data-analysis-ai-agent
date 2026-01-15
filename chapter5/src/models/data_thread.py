@@ -2,6 +2,8 @@ from pydantic import BaseModel, Field
 
 
 class DataThread(BaseModel):
+    """生成されたコードとその実行結果を保持するためのデータ型"""
+
     process_id: str
     thread_id: int
     user_request: str | None

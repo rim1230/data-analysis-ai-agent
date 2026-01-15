@@ -17,7 +17,7 @@ def programmer_node(
     data_file: str,
     user_request: str,
     process_id: str,
-    model: str = "gpt-5.2-2025-12-11-07-18",
+    model: str = "gpt-5.2-2025-12-11",
     n_trial: int = 3,
     idx: int = 0,
 ) -> tuple[int, list[DataThread]]:

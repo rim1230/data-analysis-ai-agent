@@ -58,6 +58,8 @@ select = ["ALL"]
 ignore = [
     "D1",       # undocumented
     "D213",     # multi-line summary second line
+    "D400",     # first line should end with a period
+    "D415",     # first line should end with a period, question mark, or exclamation point
     "ERA001",   # ignore detection of commented-out code
     "TD001",    # invalid todo tag
     "TD002",    # missing todo author
