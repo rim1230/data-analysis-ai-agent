@@ -20,13 +20,14 @@ def programmer_node(
     model: str = "gpt-5.2-2025-12-11",
     n_trial: int = 3,
     idx: int = 0,
+    sandbox_timeout: int = 3600,
 ) -> tuple[int, list[DataThread]]:
     template_file = "src/prompts/describe_dataframe.jinja"
     with open(data_file, "rb") as fi:
         file_object = io.BytesIO(fi.read())
     data_info = describe_dataframe(file_object=file_object, template_file=template_file)
     data_threads: list[DataThread] = []
-    with Sandbox() as sandbox:
+    with Sandbox(timeout=sandbox_timeout) as sandbox:
         with open(data_file, "rb") as fi:
             set_dataframe(sandbox=sandbox, file_object=fi)
         for thread_id in range(n_trial):

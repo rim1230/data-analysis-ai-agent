@@ -54,7 +54,7 @@ def main() -> None:
         ]
         _results = [future.result() for future in as_completed(futures)]
 
-    # 実行結果の保存
+    # 実行結果をローカルに保存する
     for _, data_threads in sorted(_results, key=lambda x: x[0]):
         data_thread = data_threads[-1]
         output_file = f"{output_dir}/{data_thread.process_id}_{data_thread.thread_id}."
