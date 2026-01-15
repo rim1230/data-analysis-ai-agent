@@ -10,10 +10,23 @@ from src.llms.models.llm_response import LLMResponse
 load_dotenv()
 
 # https://openai.com/api/pricing/ を参照されたい
+# Updated: 2026-01-15
 COST = {
+    "gpt-5.2-2025-12-11": {
+        "input": 1.75 / 1_000_000,
+        "output": 14.00 / 1_000_000,
+    },
     "o3-mini-2025-01-31": {
         "input": 1.10 / 1_000_000,
         "output": 4.40 / 1_000_000,
+    },
+    "o3": {
+        "input": 2.00 / 1_000_000,
+        "output": 8.00 / 1_000_000,
+    },
+    "o1": {
+        "input": 15.00 / 1_000_000,
+        "output": 60.00 / 1_000_000,
     },
     "gpt-4o-2024-11-20": {
         "input": 2.50 / 1_000_000,
@@ -28,7 +41,7 @@ COST = {
 
 def generate_response(
     messages: list,
-    model: str = "gpt-4o-2024-11-20",
+    model: str = "gpt-5.2-2025-12-11",
     response_format: BaseModel | None = None,
 ) -> LLMResponse:
     assert model in COST, f"Invalid model name: {model}"
